@@ -1,4 +1,5 @@
 
+
 class DLL{
 	
 	Node head;
@@ -34,6 +35,21 @@ class DLL{
 		p.prev = new_node;
 	}
 //insert at end
+	 void insertLast(int new_data){
+		Node new_node = new Node(new_data);
+		Node n = head; 
+		new_node.next = null;
+		if (head == null) {
+			new_node.prev = null;
+			head = new_node;
+			return;
+		}
+		while (n.next != null)
+			n = n.next;
+			n.next = new_node;
+			new_node.prev = n;
+	}
+
 	
 	void display(Node n){
 		Node p = null;
@@ -56,14 +72,18 @@ class DLL{
 	public static void main(String args []){
 		DLL d1 = new DLL();
 		
-		d1.insert(11);
 		d1.insert(22);
 		d1.insert(33);
-		d1.insert(55);
+		d1.insert(44);
+		d1.insert(66);
 		
 		d1.display( d1.head );
-		d1.insertAfter(d1.head, 44);
+		d1.insertAfter(d1.head, 55);
 		d1.display( d1.head );
+		d1.insertLast(11);
+		d1.display( d1.head );
+		
+		
 	}
 }
 
