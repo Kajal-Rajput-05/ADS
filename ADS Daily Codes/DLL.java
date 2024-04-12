@@ -1,6 +1,5 @@
 
-class DLL{
-	
+class DLL{	
 	Node head;
 	static class Node{
 	int data;
